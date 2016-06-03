@@ -3,34 +3,17 @@
   margin: 0;
   list-style: none;
 }
-html{
-  font-size: 100px;
-}
-@media screen and(width:320px){
+@mixin username($size){
+  $shebei-list:320px,360px,375px,384px,412px,414px,435px;
   html{
-    font-size: 65px;
+    @each $shebei in $shebei-list{
+      @media screen and(min-width: $shebei){
+        font-size: 100px * ($shebei/$size);
+      }
+    }
   }
 }
-@media screen and(width:360px){
-  html{
-    font-size: 80px;
-  }
-}
-@media screen and(width:375px){
-  html{
-    font-size: 90px;
-  }
-}
-@media screen and(width:384px){
-  html{
-    font-size: 95px;
-  }
-}
-@media screen and(width:414px){
-  html{
-    font-size: 100px;
-  }
-}
+@include username(414px);
 html,body{
   width: 100%;
   height:100%;
@@ -56,13 +39,13 @@ body{
       width: 100%;
       height:44px;
       box-sizing: border-box;
-      padding:0.08rem 0 0.08rem 0.66rem;
+      padding:8px 0 8px 0.66rem;
       background: url(../img/header-photo.png) no-repeat;
       background-size: 0.38rem;
       background-position: 13px center;
       .hw_search{
         width: 98%;
-        height:0.28rem;
+        height:28px;
         text-align: center;
         border-radius: 9px;
         background-color:#B52600;
@@ -71,7 +54,7 @@ body{
           text-align: center;
           color:#F0E0DC;
           font-size: 18px;
-          line-height: 0.28rem;
+          line-height: 28px;
           &:before{
             content:'\e6ac';
             font-family:'iconfont';
@@ -110,21 +93,23 @@ body{
     .row{
       padding-right: 0.05rem;
       box-sizing: border-box;
+      text-align: center;
       .col-xs-3{
         box-sizing: border-box;
         height:1rem;
         .col_photo{
-          margin-left: 0.05rem;
+          margin-left: 0.1rem;
           width: 0.55rem;
           padding-top: 10px;
           img{
             width: 100%;
           }
-        }.col_text{
+        }
+        .col_text{
           display: inline-block;
           text-align: center;
           padding-top: 0.1rem;
-          width: 0.65rem;
+          font-size: 12px;
           height:0.2rem;
         }
       }
@@ -148,17 +133,17 @@ body{
     .swiper_title{
       padding: 0 0.03rem;
       height:0.2rem;
-      font-size: 14px;
+      font-size: 12px;
       text-align:center;
       color:#f6205a;
-      border-radius: 6px;
+      border-radius: 0.06rem;
       display: inline-block;
       border:1px solid #f6205a;
     }
     .swiper_text{
-      padding-left: 5px;
+      padding-left: 0.05rem;
       display: inline-block;
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 }
