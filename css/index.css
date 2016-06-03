@@ -589,7 +589,10 @@ body {
 }
 
 .footer .footer_down {
-  height: 0.98px;
+  height: 0.98rem;
+  content: '';
+  clear: both;
+  display: block;
 }
 
 .footer .footer_down li {

@@ -485,7 +485,10 @@ body{
   height:0.98rem;
   background: #fff;
   .footer_down{
-    height:0.98px;
+    height:0.98rem;
+    content:'';
+    clear:both;
+    display: block;
     li{
       text-align: center;
       line-height: 1.6rem;
